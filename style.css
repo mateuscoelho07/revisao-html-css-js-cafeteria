@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&family=Inter:wght@600&family=Montserrat:wght@800&family=Teko:wght@600&display=swap');
 
 /* Estilos gerais (Todo projeto) */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body{
-    background: #1f1f1f;
-    color : #fff;
+    background: #1F1517;
+    color: #fff;
 }
 
 html {
@@ -19,15 +19,15 @@ html {
 }
 
 a {
-    text-decoration: none; /* Remove decoração texto */
+    text-decoration: none; /* Remove decoração texto*/
 }
 
 ul {
     /* Remove os marcadores (Bolinhas) */
-    list-style: none;
+    list-style-type: none;
 }
 
-/* _________________________________________________ */
+/* _______________________________________ */
 /* Cabeçalho/Header (Barra de navegação) */
 
 nav{
@@ -35,24 +35,24 @@ nav{
     margin: auto; /* Centraliza o elemento horizontalmente */
     padding: 1.5rem 10rem;
     display: flex; /* Torna o container Flex (Flexível) */
-    flex-direction: row; /* Direção dos elementos filhos*/
+    flex-direction: row; /* Direção dos elementos filhos */
     justify-content: space-between; /* Distribui os elementos filhos uniformemente com espaçamento */
 }
 
 .title {
-    font-family: 'teko', sans-serif;
+    font-family: 'Teko', sans-serif;
     font-size: 32px;
     font-weight: 600;
-    text-transform: uppercase; /* Transforme texto em maiúsculas */
+    text-transform: uppercase; /* Transforma texto em maiúsculas */
 }
 
 /* Menu hamburguer */
 .menu-toggle {
-    display: none; /* não exibe em telas grandes */
+    display: none; /* Não exibe em telas grandes */
     cursor: pointer;
 }
 
-/* Imagem do hamburguer (resposividade) */
+/* Imagem do hamburguer (Responsividade) */
 .menu-icon {
     width: 28px;
     margin-left: 20px;
@@ -63,6 +63,7 @@ nav{
     display: flex;
     gap: 24px;
     color: #fff2e780;
+    margin-top: 9px;
     margin-left: 25px;
     margin-right: 25px;
 }
@@ -70,12 +71,21 @@ nav{
 .menu a:hover {
     color: #fff;
 }
+.menu a:visited {
+    color: #fff2e780;
+}
+
+.github {
+    color: #fff2e7;
+    font-weight: 600;
+    margin-top: 8px;
+}
 
 .github:hover {
     color: #a45a49;
 }
 
-/* _________________________________________________ */
+/* _______________________________________ */
 /* Sessão principal (Main) */
 
 main {
@@ -87,13 +97,13 @@ main {
     background: #181012;
     transform: translateX(100%);
     opacity: 0;
-   
+
     /* Suaviza a animação */
-    transition: transform 1s ease, opacity is ease;
+    transition: transform 1s ease, opacity 1s ease;
 }
 
-.container .slide-from-right {
-    transform: translateX(0%);
+.container.slide-from-right {
+    transform: translateX(0);
     opacity: 1;
 }
 
@@ -101,7 +111,6 @@ main {
     max-width: 1120px;
     height: 60vh;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     gap: 6rem;
     align-items: center;
@@ -117,27 +126,32 @@ main {
 }
 
 .news {
-    font-family: 'montserrat', sans-serif;
+    font-family: 'Epilogue', sans-serif;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
 }
-
 /* Palavra (Novidade) */
 .marrom {
     color: #a45a49;
 }
 
 h1 {
-    font-family: 'montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 56px;
     font-weight: 800;
     color: #fff;
+
 }
 
-/* Linha marrom abaixo do titulo principsl */
+/* Linha marrom abaixo do título principal */
 hr {
-    border-color: #c7bab3;
+    border-color: #a45a49;
+}
+
+/* Texto abaixo do título principal */
+.subtitle {
+    color: #c7bab3;
     font-family: 'Inter', sans-serif;
     font-size: 1.3rem;
     font-weight: 400;
@@ -151,20 +165,19 @@ hr {
     margin: -1rem;
 }
 
-.images > figures > img {
+.images > figure > img {
     width: 100px;
     border-radius: 0.5rem;
 }
 
-/* ____________________________________________________________ */
+/* ___________________________________________ */
 /* Botão */
 
-button {
-    border: none;
+.button {
+    width: 100%;
     padding: 1rem;
     max-width: 1120px;
     margin: auto;
-    
     /* Posiciona o botão na divisão (50% acima) */
     transform: translateY(-50%);
 }
@@ -181,33 +194,32 @@ button:hover {
     background: #783f37;
 }
 
-/* ____________________________________________________________ */
+
+
+/* ___________________________________________ */
 /* Responsividade (Telas menores) */
 
 @media screen and (max-width:768px) {
     /* Cabeçalho/Header */
     nav ul {
         position: absolute;
-        top: 70px;
-        left: 0;
+        top:70px;
+        left:0;
         background: #333;
         width: 100%;
         overflow: hidden;
         transition: max-height 0.5s;
         z-index: 9;
     }
-
     nav ul li {
         display: block;
         margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    
     .menu {
         margin-left: 0;
     }
-
     .menu-icon {
         display: block;
         cursor: pointer;
@@ -233,14 +245,11 @@ button:hover {
         column-count: 1;
         column-gap: 0.5rem;
     }
-
     .receitas {
         padding-top: 0px;
     }
-
     .button {
         padding-bottom: 0px;
     }
-
-
+    
 }
